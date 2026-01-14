@@ -1,1 +1,7 @@
-FROM gradle:8.7-jdk21
+FROM openjdk:21
+
+WORKDIR /app
+COPY build/libs/*.jar app.jar
+
+EXPOSE 8080
+CMD ["java","-jar","/app.jar"]
